@@ -45,8 +45,8 @@ export default function News() {
             <div className="container mx-auto px-6 lg:px-12 relative z-10">
 
                 {/* Header */}
-                <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
-                    <div className="max-w-2xl space-y-4">
+                <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-6 mb-12 lg:mb-16 text-center md:text-left">
+                    <div className="max-w-2xl space-y-4 flex flex-col items-center md:items-start">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400">
                             <Newspaper className="w-4 h-4" />
                             <span className="text-xs font-bold uppercase tracking-widest">Latest Updates</span>
@@ -56,7 +56,7 @@ export default function News() {
                         </h2>
                     </div>
 
-                    <Link href="#" className="group flex items-center gap-2 text-slate-400 hover:text-white transition-colors border-b border-transparent hover:border-white pb-0.5">
+                    <Link href="#" className="hidden md:flex group items-center gap-2 text-slate-400 hover:text-white transition-colors border-b border-transparent hover:border-white pb-0.5">
                         <span>View All News</span>
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
