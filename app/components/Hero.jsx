@@ -25,7 +25,7 @@ export default function Hero() {
   if (!mounted) return null;
 
   return (
-    <section className="relative h-[95vh] pt-32 overflow-hidden bg-[#0a0e27] flex flex-col justify-between lg:block">
+    <section className="relative h-[100vh] md:h-[95vh] pt-32 overflow-hidden bg-[#0a0e27] flex flex-col justify-between lg:block">
 
       {/* Dynamic Background Effects */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -100,7 +100,7 @@ export default function Hero() {
           </div>
 
           {/* Right Visual */}
-          <div className="w-full relative opacity-0 animate-scale-in [animation-delay:800ms] flex justify-center lg:justify-end items-end lg:items-center flex-grow lg:flex-grow-0 mt-8 lg:mt-0 lg:self-end">
+          <div className="w-full relative opacity-0 animate-scale-in [animation-delay:800ms] flex justify-center lg:justify-end items-end lg:items-center flex-grow lg:flex-grow-0 -mt-32 lg:mt-0 lg:self-end">
             <div className="relative w-full max-w-6xl aspect-[3/4]">
               <Image
                 src="/hero.png"

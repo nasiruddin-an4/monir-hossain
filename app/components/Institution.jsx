@@ -47,7 +47,7 @@ export default function Institution() {
                         </div>
 
                         {/* Detailed Content */}
-                        <div className="space-y-8">
+                        <div className="space-y-2">
 
                             <div className="space-y-4">
                                 <h3 className="text-xl font-semibold text-white flex items-center gap-2">
@@ -92,7 +92,7 @@ export default function Institution() {
                         </div>
 
                         {/* CTA */}
-                        <div className="pt-4">
+                        <div className="">
                             <Link
                                 href="#"
                                 className="group inline-flex items-center gap-3 px-8 py-3 bg-amber-500 text-[#0a0e27] rounded-full font-bold hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(252,163,17,0.3)] hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]"
@@ -104,7 +104,7 @@ export default function Institution() {
                     </div>
 
                     {/* Right Visual */}
-                    <div className="w-full lg:w-1/2 relative flex justify-center lg:justify-end">
+                    <div className="w-full lg:w-1/2 relative flex justify-center lg:justify-end -mt-24 md:-mt-0">
 
                         {/* Abstract shape Background */}
                         <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] z-0">
