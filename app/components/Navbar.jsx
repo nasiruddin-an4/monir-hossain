@@ -89,106 +89,108 @@ export default function Navbar() {
   `;
 
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-500 border-b ${scrolled
-        ? 'bg-[#0a0e27]/80 backdrop-blur-xl border-indigo-500/20 py-4 shadow-lg shadow-indigo-900/20'
-        : 'bg-transparent border-transparent py-5 lg:py-7'
-        }`}
-    >
-      {/* Main Navbar Content */}
-      <div className="max-w-[1600px] mx-auto px-6 lg:px-12 flex justify-between items-center relative z-50">
+    <>
+      <nav
+        className={`fixed top-0 w-full z-[9999] transition-all duration-500 border-b ${scrolled
+          ? 'bg-[#0a0e27]/80 backdrop-blur-xl border-indigo-500/20 py-4 shadow-lg shadow-indigo-900/20'
+          : 'bg-transparent border-transparent py-5 lg:py-7'
+          }`}
+      >
+        {/* Main Navbar Content */}
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 flex justify-between items-center relative z-[10000]">
 
-        {/* Brand */}
-        <Link
-          href={navbarData.brand.href}
-          className="flex items-center group relative z-50"
-        >
-          <span className="text-xl lg:text-2xl font-display font-black tracking-[0.1em] text-white group-hover:text-indigo-400 transition-colors duration-300">
-            {navbarData.brand.name}
-          </span>
-        </Link>
+          {/* Brand */}
+          <Link
+            href={navbarData.brand.href}
+            className="flex items-center group relative z-[10000]"
+          >
+            <span className="text-xl lg:text-2xl font-display font-black tracking-[0.1em] text-white group-hover:text-indigo-400 transition-colors duration-300">
+              {navbarData.brand.name}
+            </span>
+          </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden xl:flex items-center gap-10">
-          {/* Main Links */}
-          {navbarData.mainNav.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className={`text-xs uppercase tracking-[0.1em] font-bold transition-all duration-300 relative flex items-center gap-1 ${isActive(link.href) ? 'text-white' : 'text-slate-300 hover:text-white'} hover:scale-105 group/link`}
-            >
-              {link.label}
-              <span className={`absolute -bottom-2 left-0 h-0.5 bg-indigo-500 transition-all duration-300 ${isActive(link.href) ? 'w-full' : 'w-0 group-hover/link:w-full'}`}></span>
-            </Link>
-          ))}
-
-          {/* Dropdown Menus */}
-          {navbarData.dropdowns.map((dropdown) => (
-            <div key={dropdown.label} className="relative group/dropdown py-4">
-              <button
-                className={`text-xs uppercase tracking-[0.1em] font-bold transition-all duration-300 relative flex items-center gap-1 ${openDropdown === dropdown.label ? 'text-white' : 'text-slate-300 hover:text-white'}`}
+          {/* Desktop Navigation */}
+          <div className="hidden xl:flex items-center gap-10">
+            {/* Main Links */}
+            {navbarData.mainNav.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={`text-xs uppercase tracking-[0.1em] font-bold transition-all duration-300 relative flex items-center gap-1 ${isActive(link.href) ? 'text-white' : 'text-slate-300 hover:text-white'} hover:scale-105 group/link`}
               >
-                {dropdown.label}
-                <ChevronDown size={14} className="group-hover/dropdown:rotate-180 transition-transform duration-300" />
-                <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-indigo-500 group-hover/dropdown:w-full transition-all duration-300"></span>
-              </button>
+                {link.label}
+                <span className={`absolute -bottom-2 left-0 h-0.5 bg-indigo-500 transition-all duration-300 ${isActive(link.href) ? 'w-full' : 'w-0 group-hover/link:w-full'}`}></span>
+              </Link>
+            ))}
 
-              {/* Dropdown Content */}
-              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover/dropdown:opacity-100 group-hover/dropdown:visible transition-all duration-300 transform translate-y-4 group-hover/dropdown:translate-y-0 min-w-[260px]">
-                <div className="bg-[#0f1535]/90 backdrop-blur-2xl border border-indigo-500/20 rounded-2xl p-2 shadow-2xl shadow-indigo-900/50 overflow-hidden ring-1 ring-white/10">
-                  <div className="flex flex-col gap-1">
-                    {dropdown.items.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className={`
-                          block px-5 py-3.5 text-[11px] font-bold uppercase tracking-widest rounded-xl transition-all duration-200
-                          ${isActive(item.href)
-                            ? 'bg-indigo-600/20 text-indigo-300'
-                            : 'text-slate-300 hover:text-white hover:bg-white/5 hover:translate-x-1'
-                          }
-                        `}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
+            {/* Dropdown Menus */}
+            {navbarData.dropdowns.map((dropdown) => (
+              <div key={dropdown.label} className="relative group/dropdown py-4">
+                <button
+                  className={`text-xs uppercase tracking-[0.1em] font-bold transition-all duration-300 relative flex items-center gap-1 ${openDropdown === dropdown.label ? 'text-white' : 'text-slate-300 hover:text-white'}`}
+                >
+                  {dropdown.label}
+                  <ChevronDown size={14} className="group-hover/dropdown:rotate-180 transition-transform duration-300" />
+                  <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-indigo-500 group-hover/dropdown:w-full transition-all duration-300"></span>
+                </button>
+
+                {/* Dropdown Content */}
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover/dropdown:opacity-100 group-hover/dropdown:visible transition-all duration-300 transform translate-y-4 group-hover/dropdown:translate-y-0 min-w-[260px]">
+                  <div className="bg-[#0f1535]/90 backdrop-blur-2xl border border-indigo-500/20 rounded-2xl p-2 shadow-2xl shadow-indigo-900/50 overflow-hidden ring-1 ring-white/10">
+                    <div className="flex flex-col gap-1">
+                      {dropdown.items.map((item) => (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          className={`
+                            block px-5 py-3.5 text-[11px] font-bold uppercase tracking-widest rounded-xl transition-all duration-200
+                            ${isActive(item.href)
+                              ? 'bg-indigo-600/20 text-indigo-300'
+                              : 'text-slate-300 hover:text-white hover:bg-white/5 hover:translate-x-1'
+                            }
+                          `}
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
 
-          {/* CTA Button */}
-          <Link
-            href={navbarData.cta.href}
-            className="
-              relative overflow-hidden group
-              bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600
-              text-white px-8 py-3.5 rounded-full 
-              text-xs font-bold uppercase tracking-[0.2em] 
-              shadow-lg shadow-indigo-500/30
-              transition-all duration-300
-              hover:shadow-indigo-500/50 hover:scale-105 hover:-translate-y-0.5
-            "
+            {/* CTA Button */}
+            <Link
+              href={navbarData.cta.href}
+              className="
+                relative overflow-hidden group
+                bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600
+                text-white px-8 py-3.5 rounded-full 
+                text-xs font-bold uppercase tracking-[0.2em] 
+                shadow-lg shadow-indigo-500/30
+                transition-all duration-300
+                hover:shadow-indigo-500/50 hover:scale-105 hover:-translate-y-0.5
+              "
+            >
+              <span className="relative z-10">{navbarData.cta.label}</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </Link>
+          </div>
+
+          {/* Mobile Toggle */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="xl:hidden relative z-[10000] p-2 text-white hover:text-indigo-400 transition-colors"
+            aria-label="Toggle menu"
           >
-            <span className="relative z-10">{navbarData.cta.label}</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </Link>
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
-
-        {/* Mobile Toggle */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="xl:hidden relative z-50 p-2 text-white hover:text-indigo-400 transition-colors"
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
+      </nav>
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-[#0a0e27]/95 backdrop-blur-2xl z-40 transition-all duration-500 xl:hidden ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
+        className={`fixed inset-0 bg-[#0a0e27]/95 backdrop-blur-2xl z-[9998] transition-all duration-500 xl:hidden ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
           }`}
       >
         <div className="flex flex-col h-full pt-28 pb-10 px-8 overflow-y-auto">
@@ -252,6 +254,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-    </nav>
+    </>
   );
 }
