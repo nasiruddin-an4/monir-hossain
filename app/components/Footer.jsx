@@ -1,96 +1,74 @@
+'use client';
+
 import Link from "next/link";
+import { ArrowRight, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, Youtube, Heart } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { name: 'Facebook', href: '#', icon: 'M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z' },
-    { name: 'Twitter', href: '#', icon: 'M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z' },
-    { name: 'LinkedIn', href: '#', icon: 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z' },
-    { name: 'Instagram', href: '#', icon: 'M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z' },
+    { name: 'Facebook', href: '#', icon: Facebook },
+    { name: 'Twitter', href: '#', icon: Twitter },
+    { name: 'LinkedIn', href: '#', icon: Linkedin },
+    { name: 'Instagram', href: '#', icon: Instagram },
+    { name: 'YouTube', href: '#', icon: Youtube },
   ];
 
   return (
-    <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black text-gray-300 border-t border-gray-800/50 overflow-hidden">
-      
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:14px_24px] opacity-30"></div>
-      
-      {/* Gradient Orbs */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-600/10 to-purple-600/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-purple-600/10 to-pink-600/10 rounded-full blur-3xl"></div>
+    <footer className="relative bg-[#050810] text-slate-300 overflow-hidden border-t border-white/5">
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12">
-          
-          {/* Brand Column */}
-          <div className="space-y-6 lg:col-span-1">
-            <h2 className="text-3xl font-bold tracking-tighter" style={{fontFamily: 'var(--font-display)'}}>
-              <span className="block text-white">Muhammad</span>
-              <span className="block gradient-text-accent">Monir Hossain</span>
-            </h2>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Empowering businesses and inspiring change through visionary leadership and strategic innovation.
+      {/* Background Ambience */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[150px] pointer-events-none"></div>
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-[150px] pointer-events-none"></div>
+
+      {/* Watermark */}
+      <div className="absolute top-20 right-10 text-[10rem] font-bold text-white/[0.02] pointer-events-none select-none font-display">
+        HOSSAIN
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-0 pt-20 pb-12 relative z-10">
+
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+
+          {/* Brand Column (4 cols) */}
+          <div className="lg:col-span-4 space-y-8">
+            <Link href="/" className="block">
+              <h2 className="text-3xl font-bold tracking-tighter text-white">
+                Muhammad<span className="text-amber-500">.</span>
+              </h2>
+              <p className="text-xs text-amber-500 font-medium tracking-[0.2em] uppercase mt-1">
+                Visionary . Leader . Entrepreneur
+              </p>
+            </Link>
+
+            <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
+              Empowering people and organizations to reach their highest potential through innovation, leadership, and sustainable business practices.
             </p>
-            
-            {/* Social Icons with Premium Styling */}
-            <div className="flex space-x-3 pt-2">
+
+            <div className="flex gap-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
-                  className="group relative w-11 h-11 rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 hover:from-blue-600 hover:to-purple-600 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30"
-                  aria-label={`Follow on ${social.name}`}
+                  className="w-10 h-10 rounded-full bg-white/5 border border-white/5 flex items-center justify-center text-slate-400 hover:bg-amber-500 hover:text-[#050810] hover:border-amber-500 transition-all duration-300"
+                  aria-label={social.name}
                 >
-                  <svg className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                    <path d={social.icon} />
-                  </svg>
+                  <social.icon className="w-5 h-5" />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-6 flex items-center gap-2">
-              <div className="w-1 h-4 bg-gradient-to-b from-blue-500 to-purple-600 rounded-full"></div>
-              Quick Links
-            </h3>
-            <ul className="space-y-3">
-              {[
-                { name: 'Home', href: '/' },
-                { name: 'Biography', href: '/biography' },
-                { name: 'Business Activity', href: '/business-activity' },
-                { name: 'Vision', href: '/vision' },
-                { name: 'Contact', href: '/contact' }
-              ].map((item) => (
-                 <li key={item.name}>
-                  <Link 
-                    href={item.href} 
-                    className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group"
-                  >
-                    <span className="w-0 group-hover:w-2 h-px bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-300"></span>
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Media & Resources */}
-          <div>
-            <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-6 flex items-center gap-2">
-              <div className="w-1 h-4 bg-gradient-to-b from-purple-500 to-pink-600 rounded-full"></div>
-              Media & Resources
-            </h3>
-            <ul className="space-y-3">
-              {['My Video', 'Media', 'Publications', 'Blog', 'Podcast'].map((item) => (
+          {/* Links Column 1 (2 cols) */}
+          <div className="lg:col-span-2 lg:col-start-6">
+            <h3 className="text-white font-bold mb-6">Quick Links</h3>
+            <ul className="space-y-4">
+              {['About Me', 'My Ventures', 'Success Stories', 'Media', 'Contact'].map((item) => (
                 <li key={item}>
-                  <Link 
-                    href={`/${item.toLowerCase().replace(/ /g, '-')}`} 
-                    className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group"
-                  >
-                    <span className="w-0 group-hover:w-2 h-px bg-gradient-to-r from-purple-500 to-pink-600 transition-all duration-300"></span>
+                  <Link href="#" className="text-sm text-slate-400 hover:text-amber-500 transition-colors flex items-center gap-2 group">
+                    {/* Hover chevron could go here */}
+                    <span className="w-0 group-hover:w-2 h-px bg-amber-500 transition-all duration-300"></span>
                     {item}
                   </Link>
                 </li>
@@ -98,53 +76,85 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter */}
-          <div>
-            <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-6 flex items-center gap-2">
-              <div className="w-1 h-4 bg-gradient-to-b from-orange-500 to-red-600 rounded-full"></div>
-              Stay Connected
-            </h3>
-            <p className="text-sm text-gray-400 mb-6 leading-relaxed">
-              Subscribe for the latest updates and insights.
+          {/* Links Column 2 (2 cols) */}
+          <div className="lg:col-span-2">
+            <h3 className="text-white font-bold mb-6">Legal</h3>
+            <ul className="space-y-4">
+              {['Privacy Policy', 'Terms of Service', 'Cookie Policy', 'Disclaimer'].map((item) => (
+                <li key={item}>
+                  <Link href="#" className="text-sm text-slate-400 hover:text-amber-500 transition-colors">
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Newsletter Column (4 cols) */}
+          <div className="lg:col-span-4 lg:col-start-10 md:col-span-2">
+            <h3 className="text-white font-bold mb-6">Stay Updated</h3>
+            <p className="text-xs text-slate-500 mb-4">
+              Join 10k+ subscribers for exclusive insights on leadership and business.
             </p>
-            <form className="space-y-3">
-              <div className="relative group">
+            <form className="space-y-4">
+              <div className="relative">
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
                 <input
                   type="email"
-                  placeholder="Enter your email"
-                  className="w-full bg-gray-800/50 border border-gray-700 group-hover:border-gray-600 text-white placeholder:text-gray-500 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all backdrop-blur-sm"
+                  placeholder="Email address"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-amber-500/50 transition-colors"
                 />
               </div>
-              <button
-                type="button"
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 rounded-xl transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40"
-              >
-                Subscribe
+              <button className="w-full py-3 rounded-xl bg-amber-500 text-[#050810] text-sm font-bold hover:bg-white transition-colors">
+                Subscribe Now
               </button>
             </form>
           </div>
 
         </div>
-        
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-800/50">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-500 flex items-center gap-2">
-              <span className="text-red-500">❤️</span>
-              &copy; {currentYear} Muhammad Monir Hossain. All rights reserved.
-            </p>
-            <div className="flex space-x-6 text-sm text-gray-500">
-              <a href="#" className="hover:text-white transition-colors flex items-center gap-1">
-                <span className="w-1 h-1 rounded-full bg-blue-500"></span>
-                Privacy Policy
-              </a>
-              <a href="#" className="hover:text-white transition-colors flex items-center gap-1">
-                <span className="w-1 h-1 rounded-full bg-purple-500"></span>
-                Terms of Service
-              </a>
+
+        {/* Contact Info Row (Optional, adding for utility) */}
+        <div className="grid md:grid-cols-3 gap-6 py-8 border-t border-white/5">
+          <div className="flex items-center gap-3">
+            <div className="p-2 rounded-full bg-blue-500/10 text-blue-400">
+              <MapPin className="w-4 h-4" />
+            </div>
+            <div>
+              <p className="text-xs text-slate-500">Location</p>
+              <p className="text-sm text-white font-medium">Dhaka, Bangladesh</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="p-2 rounded-full bg-emerald-500/10 text-emerald-400">
+              <Phone className="w-4 h-4" />
+            </div>
+            <div>
+              <p className="text-xs text-slate-500">Phone</p>
+              <p className="text-sm text-white font-medium">+880 1234 567890</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="p-2 rounded-full bg-purple-500/10 text-purple-400">
+              <Mail className="w-4 h-4" />
+            </div>
+            <div>
+              <p className="text-xs text-slate-500">Email</p>
+              <p className="text-sm text-white font-medium">contact@monirhossain.com</p>
             </div>
           </div>
         </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-slate-500">
+            &copy; {currentYear} Betopia Group. All rights reserved.
+          </p>
+          <div className="flex items-center gap-1 text-xs text-slate-600">
+            <span>Designed </span>
+            <span>by <a className="hover:text-white hover:underline transition-colors duration-300" href="https://www.linkedin.com/in/nasiruddna4/">Nasir Uddin</a></span>
+          </div>
+        </div>
+
       </div>
     </footer>
   );
