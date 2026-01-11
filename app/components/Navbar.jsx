@@ -11,6 +11,7 @@ const navbarData = {
   },
   mainNav: [
     { label: 'Home', href: '/' },
+    { label: 'Formal Photo', href: '/gallery' },
   ],
   dropdowns: [
     {
@@ -196,13 +197,17 @@ export default function Navbar() {
         <div className="flex flex-col h-full pt-28 pb-10 px-8 overflow-y-auto">
           <div className="flex flex-col space-y-6">
             {/* Mobile Home Link */}
-            <Link
-              href={navbarData.brand.href}
-              onClick={() => setIsOpen(false)}
-              className="text-2xl font-display font-bold text-white hover:text-indigo-400 transition-colors"
-            >
-              Home
-            </Link>
+            {/* Mobile Main Links */}
+            {navbarData.mainNav.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="text-2xl font-display font-bold text-white hover:text-indigo-400 transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
 
             <div className="h-px bg-white/10 w-full" />
 

@@ -17,21 +17,21 @@ const sliderData = [
         title: 'Monir Foundation',
         category: 'Non-Profit',
         description: 'Established to provide healthcare support, education, and financial aid to the underprivileged communities across Bangladesh, creating a safety net for those in need.',
-        image: '/8.webp'
+        image: 'https://i.postimg.cc/v8pRnvSY/news2.webp'
     },
     {
         year: '2022',
         title: 'Project "Tech for All"',
         category: 'Education',
         description: 'Launching comprehensive free IT training programs to equip rural youth with high-demand digital skills, bridging the urban-rural digital divide.',
-        image: '/hero.png'
+        image: 'https://i.postimg.cc/nV68m1wc/news4.webp'
     },
     {
         year: '2024',
         title: 'Startup Mentorship',
         category: 'Entrepreneurship',
         description: 'Investing in and mentoring over 50+ early-stage startups to foster innovation and entrepreneurship in the tech sector, creating new job opportunities.',
-        image: '/9.jpg'
+        image: 'https://i.postimg.cc/WpQRZ7fs/news1.webp'
     }
 ];
 

@@ -11,7 +11,7 @@ const awardsData = [
         year: '2023',
         title: 'Lifetime Achievement Award in Technology & Innovation',
         description: 'Honored for revolutionizing the IT landscape of Bangladesh and creating employment for thousands.',
-        image: '/award-1.jpg',
+        image: 'https://i.postimg.cc/GtRF0Vm3/a1.jpg',
         category: 'Innovation',
         organization: 'Global Tech Summit'
     },
@@ -20,7 +20,7 @@ const awardsData = [
         year: '2022',
         title: 'Entrepreneur of the Year',
         description: 'Recognized by the Ministry of Commerce for outstanding export performance in the service sector.',
-        image: '/award-2.jpg',
+        image: 'https://i.postimg.cc/QCDQLwdx/a2.jpg',
         category: 'Business',
         organization: 'National Export Trophy'
     },
@@ -29,7 +29,7 @@ const awardsData = [
         year: '2021',
         title: 'Excellence in Global Leadership',
         description: 'Awarded for exceptional leadership in expanding sustainable business practices across 47+ countries.',
-        image: '/award-3.jpg',
+        image: 'https://i.postimg.cc/KjbPXw8Y/a4.jpg',
         category: 'Leadership',
         organization: 'Asia Business Forum'
     }

@@ -11,7 +11,7 @@ const newsItems = [
         category: "Global Expansion",
         date: "March 12, 2024",
         excerpt: "Marking a significant milestone in our global growth strategy, Betopia Group opens its new regional headquarters in Poland to serve the European market.",
-        image: "/hero.png", // Placeholder
+        image: "https://i.postimg.cc/v8pRnvSY/news2.webp", // Placeholder
         link: "#"
     },
     {
@@ -20,7 +20,7 @@ const newsItems = [
         category: "Awards & Recognition",
         date: "February 28, 2024",
         excerpt: "Recognized for his outstanding contribution to the IT export sector and digital transformation of Bangladesh's economy.",
-        image: "/hero.png", // Placeholder
+        image: "https://i.postimg.cc/nV68m1wc/news4.webp", // Placeholder
         link: "#"
     },
     {
@@ -29,7 +29,7 @@ const newsItems = [
         category: "CSR Initiative",
         date: "January 15, 2024",
         excerpt: "A nationwide initiative aiming to provide free computer education to 10,000 students in rural areas over the next two years.",
-        image: "/hero.png", // Placeholder
+        image: "https://i.postimg.cc/WpQRZ7fs/news1.webp", // Placeholder
         link: "#"
     }
 ];

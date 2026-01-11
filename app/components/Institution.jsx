@@ -120,7 +120,7 @@ export default function Institution() {
                         {/* Image Frame */}
                         <div className="relative z-10 w-full max-w-sm lg:max-w-lg aspect-[3/4]">
                             <Image
-                                src="/hero.png"
+                                src="https://i.postimg.cc/R0bKFqC8/about_Img.png"
                                 alt="Mr. Monir Hossain"
                                 fill
                                 className="object-cover object-top drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] mask-image-b-fade"
